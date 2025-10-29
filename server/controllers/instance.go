@@ -174,7 +174,8 @@ func (s *Instance) Connect(ctx echo.Context) error {
 		return ctx.JSON(http.StatusOK, dto.ConnectInstanceResponse{
 			Message:   "Se a instância for reiniciada esta instância poderá ser perdida caso você não consiga se conectar",
 			Connected: false,
-			Base64:    "data:image/png;base64," + base64.StdEncoding.EncodeToString(png),
+			Base64:    base64.StdEncoding.EncodeToString(png),
+
 		})
 	}
 
