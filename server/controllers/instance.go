@@ -172,7 +172,7 @@ func (s *Instance) Connect(ctx echo.Context) error {
 			return utils.HTTPFail(ctx, http.StatusInternalServerError, err, "failed to encode qrcode")
 		}
 		return ctx.JSON(http.StatusOK, dto.ConnectInstanceResponse{
-			Message:   "If instance restart this instance could be lost if you cannot connect",
+			Message:   "Se a instância for reiniciada esta instância poderá ser perdida caso você não consiga se conectar",
 			Connected: false,
 			Base64:    "data:image/png;base64," + base64.StdEncoding.EncodeToString(png),
 		})
